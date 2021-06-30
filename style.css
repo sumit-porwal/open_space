@@ -1,0 +1,80 @@
+body, html{
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.main{
+  display: flex;
+  align-items: center;
+  justify-content:start;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  z-index: 20;
+}
+.solar{
+  font-size: 7em;
+}
+.para{
+  padding: 10px;
+  background: rgba(72, 44, 99, 0.5);
+  margin-top: 30px;
+  width:70%;
+  font-size: 1.5em;
+  border-radius: 7px;
+}
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.box, .container{
+  margin-left: 20px;
+  position: relative;
+  z-index: 10;
+  width:50%;
+  height: 100vh;
+}
+h1{
+  
+  color:white;
+
+}
+
+h2{
+  font-size: 3em;
+  color:white;
+}
+table tr{
+  color:white;
+
+}
+.profile,.facts{
+  margin-top: 10px;
+  padding: 50px;
+  display: flex;
+  border: 1px solid blue;
+  border-radius:100% 50% 50% 100% ;
+  color: white;
+  opacity: 0.8;
+  background: url('./3425081.jpg');
+  height: 25vh;
+}
+
+.rowOne li, .rowTwo li{
+  border-bottom: 1px solid rgb(89, 125, 243);
+
+}
+.rowOne li{
+  list-style-type: square;
+}
+.rowTwo li{
+  list-style-type: none;
+}
+
+.uranus, .neptune{
+  margin-left: 50%;
+}
