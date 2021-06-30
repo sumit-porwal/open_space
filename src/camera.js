@@ -19,8 +19,5 @@ function update(scene, renderer){
 }	
 
 
-function cam(scene,renderer){
-	// update(scene, renderer); 
-	// scene.add(tube);
-}
-export {cam, camera};
+
+export {camera};
