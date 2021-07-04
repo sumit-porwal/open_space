@@ -9,21 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 //sun
 gsap.fromTo(camera.position, {
-	x: 0,
+	x: -360,
 	z: 0
 }, {
 	scrollTrigger: {
 		trigger: "#sun",
-		start:"top top",
-		end: "top bottom",
+		end: "center center",
 		toggleActions: "restart none reverse none",
-		scrub:2,
-		markers: true,
+		scrub:true,
 	},
 	x: -110,
 	z: 100,
 	duration: 5,
-	ease: "power1"
 });
 
 //mercury
@@ -35,13 +32,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#mercury",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true,
 	},
 	x: 104.65,
 	z: 0.3,
 	duration: 5,
-	ease: "power1"
 });
 //venus
 gsap.fromTo(camera.position, {
@@ -52,13 +47,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#venus",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true,
 	},
 	x: 108.7,
 	z: 1,
 	duration: 5,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 108.7,
@@ -68,13 +61,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#earth",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true,
 	},
 	x: 118.8,
 	z: 1,
 	duration: 5,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 118.8,
@@ -84,13 +75,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#mars",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true
 	},
 	x: 139.4,
 	z: 0.5,
 	duration: 2,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 139.4,
@@ -100,13 +89,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#jupiter",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true
 	},
 	x: 167,
 	z: 11,
 	duration: 2,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 167,
@@ -116,13 +103,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#saturn",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true
 	},
 	x: 213,
 	z: 14,
 	duration: 2,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 213,
@@ -132,13 +117,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#uranus",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true
 	},
 	x: 251.4,
 	z: 5.5,
 	duration: 2,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 251.4,
@@ -148,13 +131,11 @@ gsap.fromTo(camera.position, {
 		trigger: "#neptune",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:true
 	},
 	x: 281.5,
 	z: 5.5,
 	duration: 2,
-	ease: "power1"
 });
 gsap.fromTo(camera.position, {
 	x: 281.5,
@@ -164,12 +145,10 @@ gsap.fromTo(camera.position, {
 		trigger: "#backsun",
 		end: "center center",
 		toggleActions: "restart none reverse none",
-		markers: true,
 		scrub:1,
 	},
 	x: -110,
 	z: 120,
 	duration: 1,
-	ease: "power1"
 });
 }
