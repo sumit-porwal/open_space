@@ -101,7 +101,7 @@ function animate() {
 }
 
 animation(camera);
-camera.position.set(0, 0, 0);
+camera.position.set(-360, 0, 0);
 
 function render() {
 	
