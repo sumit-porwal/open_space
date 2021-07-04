@@ -17,13 +17,13 @@ gsap.fromTo(camera.position, {
 		start:"top top",
 		end: "top bottom",
 		toggleActions: "restart none reverse none",
-		scrub:1,
+		scrub:2,
 		markers: true,
 	},
 	x: -110,
 	z: 100,
 	duration: 5,
-	ease: "none"
+	ease: "power1"
 });
 
 //mercury
@@ -165,6 +165,7 @@ gsap.fromTo(camera.position, {
 		end: "center center",
 		toggleActions: "restart none reverse none",
 		markers: true,
+		scrub:1,
 	},
 	x: -110,
 	z: 120,
