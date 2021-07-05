@@ -52,12 +52,13 @@ ambientLight.intensity= 0;
 let toggle = 0;
 lightBtn.addEventListener('click',()=>{
 	if(toggle%2){
-	bulb.src = './reso/on.svg';
+		document.getElementById("Layer_1").style.fill = "white";
 		ambientLight.intensity = 1;
 		pointLight.intensity=0;
 	}
 	else{
-		bulb.src = './reso/off.svg';
+		document.getElementById("Layer_1").style.fill = "yellow";
+		
 		ambientLight.intensity = 0;
 		pointLight.intensity=1;
 		
