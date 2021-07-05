@@ -1,4 +1,5 @@
 import './style.css';
+import background from './../texture/space.jpg';
 import {
 	camera
 } from './camera';
@@ -12,9 +13,9 @@ import {
 } from './Objects';
 let lightBtn = document.getElementById('light');
 let bulb = document.getElementById('bulb');
-import {
-	OrbitControls
-} from 'three/examples/jsm/controls/OrbitControls';
+// import {
+// 	OrbitControls
+// } from 'three/examples/jsm/controls/OrbitControls';
 
 //init()
 const scene = new THREE.Scene();
@@ -75,8 +76,9 @@ function onWindowResize() {
 	renderer.setSize(window.innerWidth, window.innerHeight)
 	render()
 }
+
 //scene background
-const sceneBackground = new THREE.TextureLoader().load('./texture/space.jpg')
+const sceneBackground = new THREE.TextureLoader().load(background);
 scene.background = sceneBackground;
 
 //making sun
@@ -100,7 +102,7 @@ function animate() {
 	render();
 }
 
-animation(camera);
+animation(camera,solarSystem);
 camera.position.set(-360, 0, 0);
 
 function render() {

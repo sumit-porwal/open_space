@@ -2,153 +2,76 @@ import gsap from 'gsap';
 import {
 	ScrollTrigger
 } from "gsap/ScrollTrigger";
-export default function animation(camera){
 
-//animations
-gsap.registerPlugin(ScrollTrigger);
+export default function animation(camera,solarSystem) {
 
-//sun
-gsap.fromTo(camera.position, {
-	x: -360,
-	z: 0
-}, {
-	scrollTrigger: {
-		trigger: "#sun",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true,
-	},
-	x: -110,
-	z: 100,
-	duration: 5,
-});
-
-//mercury
-gsap.fromTo(camera.position, {
-	x: -110,
-	z: 100
-}, {
-	scrollTrigger: {
-		trigger: "#mercury",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true,
-	},
-	x: 104.65,
-	z: 0.3,
-	duration: 5,
-});
-//venus
-gsap.fromTo(camera.position, {
-	x: 104.65,
-	z: 0.3
-}, {
-	scrollTrigger: {
-		trigger: "#venus",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true,
-	},
-	x: 108.7,
-	z: 1,
-	duration: 5,
-});
-gsap.fromTo(camera.position, {
-	x: 108.7,
-	z: 1
-}, {
-	scrollTrigger: {
-		trigger: "#earth",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true,
-	},
-	x: 118.8,
-	z: 1,
-	duration: 5,
-});
-gsap.fromTo(camera.position, {
-	x: 118.8,
-	z: 1
-}, {
-	scrollTrigger: {
-		trigger: "#mars",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true
-	},
-	x: 139.4,
-	z: 0.5,
-	duration: 2,
-});
-gsap.fromTo(camera.position, {
-	x: 139.4,
-	z: 0.5,
-}, {
-	scrollTrigger: {
-		trigger: "#jupiter",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true
-	},
-	x: 167,
-	z: 11,
-	duration: 2,
-});
-gsap.fromTo(camera.position, {
-	x: 167,
-	z: 11
-}, {
-	scrollTrigger: {
-		trigger: "#saturn",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true
-	},
-	x: 213,
-	z: 14,
-	duration: 2,
-});
-gsap.fromTo(camera.position, {
-	x: 213,
-	z: 14
-}, {
-	scrollTrigger: {
-		trigger: "#uranus",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true
-	},
-	x: 251.4,
-	z: 5.5,
-	duration: 2,
-});
-gsap.fromTo(camera.position, {
-	x: 251.4,
-	z: 5.5
-}, {
-	scrollTrigger: {
-		trigger: "#neptune",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:true
-	},
-	x: 281.5,
-	z: 5.5,
-	duration: 2,
-});
-gsap.fromTo(camera.position, {
-	x: 281.5,
-	z: 5.5
-}, {
-		scrollTrigger: {
-		trigger: "#backsun",
-		end: "center center",
-		toggleActions: "restart none reverse none",
-		scrub:1,
-	},
-	x: -110,
-	z: 120,
-	duration: 1,
-});
+	//animations
+	gsap.registerPlugin(ScrollTrigger,solarSystem);
+	let position = [{
+			x: -360,
+			z: 0
+		},
+		{
+			x: -110,
+			z: 100
+		},
+		{
+			x: 104.65,
+			z: 0.3
+		},
+		{
+			x: 108.7,
+			z: 1
+		},
+		{
+			x: 118.8,
+			z: 1
+		},
+		{
+			x: 139.4,
+			z: 0.5
+		},
+		{
+			x: 167,
+			z: 11
+		}, {
+			x: 213,
+			z: 14
+		}, {
+			x: 251.4,
+			z: 5.5
+		}, {
+			x: 281.5,
+			z: 5.5
+		}, {
+			x: -110,
+			z: 100
+		},
+	]
+	gsap.utils.toArray('.box').forEach((el, i) => {
+		gsap.fromTo(camera.position, {
+			x: position[i].x,
+			z: position[i].z
+		}, {
+			scrollTrigger: {
+				trigger: el,
+				end: "center center",
+				scrub: i * 0.2
+			},
+			x: position[i + 1].x,
+			z: position[i + 1].z,
+			duration:5,
+			ease: 'back'
+		});
+		if(!i == 0){
+			
+			gsap.to(solarSystem[i].rotation, {
+				scrollTrigger: {
+					trigger: "el",
+					scrub: true,
+				},
+				y: Math.PI
+			});
+		}
+	});
 }

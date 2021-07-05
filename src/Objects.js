@@ -2,18 +2,26 @@ import * as THREE from 'three';
 import {
 	shaderMat,
 	shaderPerlinMat,
-	shaderAuora
+	// shaderAuora
 } from './Shaders';
-const sunTexture = new THREE.TextureLoader().load('./texture/8k_sun.jpg');
-const mercuryTexture = new THREE.TextureLoader().load('./texture/mercury.jpg');
-const venusTexture = new THREE.TextureLoader().load('./texture/venus.jpg');
-const earthTexture = new THREE.TextureLoader().load('./texture/earth.jpg');
-const marsTexture = new THREE.TextureLoader().load('./texture/mars.jpg');
-const jupiterTexture = new THREE.TextureLoader().load('./texture/jupiter.jpg');
-const saturnTexture = new THREE.TextureLoader().load('./texture/saturn.jpg');
-const neptuneTexture = new THREE.TextureLoader().load('./texture/neptune.jpg');
-const uranusTexture = new THREE.TextureLoader().load('./texture/uranus.jpg');
-const saturn_ringTexture = new THREE.TextureLoader().load('./texture/saturn_ring.png');
+import mercurryTex from './../texture/mercury.jpg';
+import venusTex from './../texture/venus.jpg';
+import earthTex from './../texture/earth.jpg';
+import marsTex from './../texture/mars.jpg';
+import jupiterTex from './../texture/jupiter.jpg';
+import saturnTex from './../texture/saturn.jpg';
+import uranusTex from './../texture/uranus.jpg';
+import neptuneTex from './../texture/neptune.jpg';
+import saturnringTex from './../texture/saturn_ring.png';
+const mercuryTexture = new THREE.TextureLoader().load(mercurryTex);
+const venusTexture = new THREE.TextureLoader().load(venusTex);
+const earthTexture = new THREE.TextureLoader().load(earthTex);
+const marsTexture = new THREE.TextureLoader().load(marsTex);
+const jupiterTexture = new THREE.TextureLoader().load(jupiterTex);
+const saturnTexture = new THREE.TextureLoader().load(saturnTex);
+const neptuneTexture = new THREE.TextureLoader().load(neptuneTex);
+const uranusTexture = new THREE.TextureLoader().load(uranusTex);
+const saturn_ringTexture = new THREE.TextureLoader().load(saturnringTex);
 
 // const sunAuora = new THREE.Mesh(
 
@@ -99,8 +107,8 @@ const Uranus = new THREE.Mesh(
 	}),
 
 )
-const solarSystem = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn,SaturnRing, Neptune, Uranus, 
-];
+const solarSystem = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, SaturnRing,
+	Uranus, Neptune];
 
 const scene1 = new THREE.Scene();
 
@@ -111,7 +119,7 @@ const cubeRenderTarget1 = new THREE.WebGLCubeRenderTarget(256, {
 	encoding: THREE.sRGBEncoding // temporary -- to prevent thematerial'sshader from recompiling every frame
 });
 
-const cubeCamera1 = new THREE.CubeCamera(0.1, 1000, cubeRenderTarget1);
+const cubeCamera1 = new THREE.CubeCamera(0.1, 100, cubeRenderTarget1);
 scene1.add(TheSun);
 
 function updateShader(renderer) {
