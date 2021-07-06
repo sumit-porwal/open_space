@@ -125,9 +125,9 @@ scene1.add(TheSun);
 function updateShader(renderer) {
 
 
-	shaderPerlinMat.uniforms.time.value += 0.05;
+	// shaderPerlinMat.uniforms.time.value += 0.05;
 	cubeCamera1.update(renderer, scene1);
-	shaderMat.uniforms.time.value += 0.05;
+	// shaderMat.uniforms.time.value += 0.05;
 	shaderMat.uniforms.uPerlin.value = cubeRenderTarget1.texture;
 }
 

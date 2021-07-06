@@ -20,6 +20,8 @@ mat2 rotate(float a){
  * The main program
  */
 void main() {
+    vPosition = position;
+    vPosition*=0.02;
     vNormal  = normal;
     // Calculate the varyings
     vec4 worldPosition = modelMatrix * vec4(position, 1.0);
@@ -28,25 +30,24 @@ void main() {
     float t = time*0.002;
     mat2 rot = rotate(t);
 
-    vec3 p0 = position*0.02;
+    vec3 p0 = vPosition;
     p0.yz = rot*p0.yz;
     vLayer0 = p0;
 
     rot = rotate(t + 10.);
 
-    vec3 p1 = position*0.02;
+    vec3 p1 = vPosition;
     p1.xz = rot*p1.xz;
     vLayer1 = p1;
 
     rot = rotate(t + 30.);
     
-    vec3 p2 = position*0.02;
+    vec3 p2 = vPosition;
     p2.xy = rot*p2.xy;
     vLayer2 = p2;
 
 
     vUv = uv;
-    vPosition = position;
 
     // Vertex shader output
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);

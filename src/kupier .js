@@ -52,7 +52,7 @@ function getY(){
 
 }
 function addStr(scene){
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+  const geometry = new THREE.SphereBufferGeometry(0.25, 24, 24);
   const material = new THREE.MeshStandardMaterial({color:0xffffff});
   const star  = new THREE.Mesh(geometry, material);
   let point = getXZ();
