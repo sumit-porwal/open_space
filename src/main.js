@@ -111,7 +111,7 @@ function render() {
 updateShader(renderer);
 setTimeout(
 	render,
-	1000
+	100
 
 )
 
