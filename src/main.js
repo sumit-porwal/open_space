@@ -20,7 +20,6 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,0.1, 500 );
 camera.rotateY(-0.3);
 //renderer config
-
 const renderer = new THREE.WebGL1Renderer({
 	canvas: document.querySelector('#bg'),
 	powerPreference: "high-performance",
@@ -89,29 +88,30 @@ scene.background = sceneBackground;
 //making sun
 
 
-// const rot = [0, 0.001, 0.001, 0.01,	0.01, 0.024, 0.024,	0.0, 0.014,	0.014]
+const rot = [0, 0.001, 0.001, 0.01,	0.01, 0.024, 0.024,	0.0, 0.014,	0.014]
 
-// function rotate(){
-// 	solarSystem.map((e,i)=>{
+function rotate(){
+	solarSystem.map((e,i)=>{
 
-// 		e.rotation.y+=rot[i]
-// 	});
+		e.rotation.y+=rot[i]
+	});
 
 
-// }
+}
 //animation and rendering
-
 animation(camera, solarSystem, render);
 camera.position.set(-360, 0, 0);
 
 function render() {
+	requestAnimationFrame(render);
+	
+	rotate();
 	renderer.render(scene, camera)
 }
-
 updateShader(renderer);
 setTimeout(
 	render,
-	100
+	200
 
 )
 

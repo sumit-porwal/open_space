@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import {
 	shaderMat,
 	shaderPerlinMat,
-	// shaderAuora
 } from './Shaders';
 import mercurryTex from './../texture/mercury.jpg';
 import venusTex from './../texture/venus.jpg';
@@ -23,11 +22,7 @@ const neptuneTexture = new THREE.TextureLoader().load(neptuneTex);
 const uranusTexture = new THREE.TextureLoader().load(uranusTex);
 const saturn_ringTexture = new THREE.TextureLoader().load(saturnringTex);
 
-// const sunAuora = new THREE.Mesh(
 
-// 	new THREE.SphereBufferGeometry(85,30,30),
-// 	shaderAuora,
-// )
 const Sun = new THREE.Mesh(
 
 	new THREE.SphereBufferGeometry(70, 30, 30),

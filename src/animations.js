@@ -3,7 +3,7 @@ import {
 	ScrollTrigger
 } from "gsap/ScrollTrigger";
 
-export default function animation(camera,solarSystem, render) {
+export default function animation(camera,solarSystem) {
 
 	//animations
 	gsap.registerPlugin(ScrollTrigger,solarSystem);
@@ -62,8 +62,8 @@ export default function animation(camera,solarSystem, render) {
 			z: position[i + 1].z,
 			duration:5,
 			ease: 'none'
-		}).eventCallback('onUpdate',render);
-		if(!i == 0){
+		})
+		if(i == 7){
 			
 			gsap.to(solarSystem[i].rotation, {
 				scrollTrigger: {
@@ -71,7 +71,7 @@ export default function animation(camera,solarSystem, render) {
 					scrub: 1,
 				},
 				y: Math.PI
-			}).eventCallback('onUpdate',render);
+			});
 		}
 	});
 }
